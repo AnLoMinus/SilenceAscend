@@ -1,0 +1,573 @@
+# 🌐 אתר תענית דיבור – **SilenceAscend – SA**
+
+📅 **תאריך לועזי:** Friday, 28.11.2025
+📅 **תאריך עברי:** ח׳ בכסלו תשפ״ו
+⏰ **שעה:** 22:41 (Asia/Jerusalem)
+💽 **קרדיטים:**
+
+* Concept & Vision: **Moshe Leon Yaakobov (AnLoMinus)**
+* Project: **SilenceAscend – SA**
+* Repo (מוצע): `https://github.com/AnLoMinus/SilenceAscend-SA`
+* GitHub Pages (מוצע): `https://anlominus.github.io/SilenceAscend-SA/`
+
+⚖️ **מספר המידות:** 36
+
+---
+
+## 🧭 שם הפרויקט והמותג
+
+**שם עברי:** תענית דיבור – מסלול עלייה דרך השקט
+**שם אנגלי רשמי למאגר:** **SilenceAscend – SA**
+
+> *Silence + Ascend = עלייה רוחנית דרך השקט, שליטה בדיבור, ניקוי אנרגטי.*
+
+---
+
+## 🗂️ RepoCraft – מבנה מאגר מומלץ (SilenceAscend-SA) 🧱
+
+```text
+SilenceAscend-SA/
+├─ README.md
+├─ LICENSE
+├─ index.html
+├─ /docs/
+│  ├─ overview.md
+│  ├─ tracks-7day.md
+│  ├─ tracks-40day.md
+│  ├─ faq.md
+│  └─ practics-cards.md
+├─ /assets/
+│  ├─ /img/
+│  │  ├─ hero-silenceascend-4k.png
+│  │  ├─ logo-sa-light.png
+│  │  └─ logo-sa-dark.png
+│  └─ /css/
+│     └─ style.css  (אופציונלי – אם תרצה להפריד CSS)
+├─ /pages/
+│  ├─ levels.html        (רמות תענית דיבור)
+│  ├─ tracks.html        (7 / 40 ימים – מסלולים)
+│  └─ cards.html         (קלפים / משפטי כוח)
+├─ /.github/
+│  └─ workflows/
+│     └─ pages-deploy.yml   (CI לדיפלוי GitHub Pages)
+└─ /community/
+   ├─ CODE_OF_CONDUCT.md
+   ├─ CONTRIBUTING.md
+   └─ SECURITY.md
+```
+
+---
+
+## 🏠 index.html – דף נחיתה מלא בסגנון שלך ⚡
+
+העתק/הדבק ישירות ל-`index.html` במאגר GitHub Pages:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SilenceAscend – Fast of Speech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SilenceAscend – Fast of Speech. A spiritual-mental framework for Ta'anit Dibur (Fast of Speech), discipline of words, and inner reset." />
+  <style>
+    :root {
+      --bg-main: #050816;
+      --bg-card: #0c1020;
+      --accent-1: #7f5af0;
+      --accent-2: #2cb67d;
+      --accent-soft: #ffce6b;
+      --text-main: #f5f5f5;
+      --text-muted: #9ca3af;
+      --border-soft: rgba(148, 163, 184, 0.3);
+      --shadow-soft: 0 22px 45px rgba(0, 0, 0, 0.65);
+      --radius-xl: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1b1236 0, #050816 50%, #02010a 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 16px 48px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .logo-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+    }
+
+    .logo-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .chip {
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      border: 1px solid var(--border-soft);
+      background: linear-gradient(120deg, rgba(127, 90, 240, 0.15), rgba(44, 182, 125, 0.12));
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .chip-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent-2);
+      box-shadow: 0 0 12px rgba(44, 182, 125, 0.8);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 880px) {
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero {
+      background: radial-gradient(circle at top left, rgba(127, 90, 240, 0.28), transparent 55%),
+                  radial-gradient(circle at bottom right, rgba(44, 182, 125, 0.25), transparent 55%),
+                  var(--bg-card);
+      border-radius: var(--radius-xl);
+      padding: 28px 24px;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.04) 0, transparent 55%),
+        radial-gradient(circle at 80% 100%, rgba(255, 255, 255, 0.03) 0, transparent 55%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-soft);
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 3vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, #f97316, #facc15, #2cb67d);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .hero-sub span {
+      color: var(--accent-soft);
+      font-weight: 500;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .hero-badge {
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 9px 16px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #7f5af0, #f97316, #facc15);
+      box-shadow: 0 18px 30px rgba(15, 23, 42, 0.8);
+      color: #020617;
+    }
+
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-main);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 22px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta strong {
+      color: var(--accent-2);
+    }
+
+    .card {
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), #020617);
+      border-radius: var(--radius-xl);
+      padding: 22px 20px;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .card-section {
+      border-radius: 16px;
+      border: 1px dashed rgba(148, 163, 184, 0.5);
+      padding: 10px 12px;
+      font-size: 0.86rem;
+    }
+
+    .card-section + .card-section {
+      margin-top: 8px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text-muted);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .levels-list li,
+    .steps-list li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 4px;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .levels-list li::before,
+    .steps-list li::before {
+      content: "•";
+      position: absolute;
+      left: 4px;
+      top: 0;
+      color: var(--accent-soft);
+    }
+
+    footer {
+      margin-top: 32px;
+      border-top: 1px solid rgba(148, 163, 184, 0.45);
+      padding-top: 14px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.78rem;
+    }
+
+    .tag {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">
+        <div class="logo-title">SilenceAscend · SA</div>
+        <div class="logo-sub">Fast of Speech · Ta'anit Dibur · Word Discipline</div>
+      </div>
+      <div class="chip">
+        <span class="chip-dot"></span>
+        Live Practice · Inner Reset
+      </div>
+    </header>
+
+    <main>
+      <!-- LEFT: HERO -->
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="hero-kicker">Fast of Speech · Ta'anit Dibur</div>
+          <h1 class="hero-title">
+            Reclaim your <span>Words</span>,  
+            Upgrade your <span>Soul</span>.
+          </h1>
+          <p class="hero-sub">
+            SilenceAscend is a practical path for <span>Ta'anit Dibur</span> –  
+            a Fast of Speech that cleans noise, strengthens discipline,  
+            and turns every word into <span>conscious creation</span>.
+          </p>
+
+          <div class="hero-badges">
+            <div class="hero-badge">🧘 2h Focus Silence</div>
+            <div class="hero-badge">🔥 7-Day Reset Track</div>
+            <div class="hero-badge">🌙 40-Day Deep Discipline</div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#tracks" class="btn btn-primary">
+              Start a 2-Hour Fast
+            </a>
+            <a href="#practice" class="btn btn-secondary">
+              How to Practice
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            Designed by <strong>AnLoMinus</strong> · for souls who choose  
+            <strong>less talking</strong> and <strong>more presence</strong>.
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT: LEVELS + STEPS -->
+      <section class="card">
+        <div>
+          <div class="card-title">🎚 Levels of Ta'anit Dibur</div>
+          <div class="card-section">
+            <ul class="levels-list">
+              <li><strong>Level 1 – Focus (2–3h)</strong>: No unnecessary words, only essentials.</li>
+              <li><strong>Level 2 – Daily (1 day/week)</strong>: A full day of quiet presence.</li>
+              <li><strong>Level 3 – 7-Day Track</strong>: One week of disciplined speech & journaling.</li>
+              <li><strong>Level 4 – 40-Day Journey</strong>: Full reprogramming of word–energy.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="card-title">🧩 Practice Steps</div>
+          <div class="card-section" id="practice">
+            <ul class="steps-list">
+              <li><strong>Set intention:</strong> “I sanctify my speech and choose conscious silence.”</li>
+              <li><strong>Define time:</strong> clear start & end (2h / day / 7 / 40).</li>
+              <li><strong>Replace words with writing:</strong> notes instead of talk.</li>
+              <li><strong>Exit gently:</strong> end the fast with a soft, clean first sentence.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="card-title" id="tracks">📅 Tracks & Tools</div>
+          <div class="card-section">
+            <p style="font-size:0.86rem; color:var(--text-muted);">
+              Each track comes with cards, affirmations, and a simple log:
+            </p>
+            <div class="pill-row">
+              <span class="pill">Silence Log · start/end</span>
+              <span class="pill">“Allowed speech” list</span>
+              <span class="pill">Daily reflection line</span>
+              <span class="pill">Trigger awareness notes</span>
+              <span class="pill">Reward after completion</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        © SilenceAscend – SA · Crafted by AnLoMinus · All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/AnLoMinus/SilenceAscend-SA" target="_blank" rel="noopener" class="tag">
+          GitHub Repo
+        </a>
+        <a href="https://anlominus.github.io/SilenceAscend-SA/" target="_blank" rel="noopener" class="tag">
+          Live Site
+        </a>
+        <span class="tag">#SilenceAscend #FastOfSpeech #TaAnitDibur</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+```
+
+---
+
+## 📘 README.md – שלד מוכן למאגר SilenceAscend-SA
+
+```markdown
+# 🕊 SilenceAscend – SA · Fast of Speech (Ta'anit Dibur)
+
+SilenceAscend is a practical, spiritual and mental framework  
+for **Ta'anit Dibur – Fast of Speech**:
+
+- Word discipline  
+- Noise detox  
+- Inner focus  
+- Conscious creation through speech  
+
+---
+
+## ✨ Vision
+
+> Less empty words.  
+> More presence, more intention, more light.
+
+This project offers:
+
+- 🧘 **2–3h Focus Silence Sessions**
+- 📅 **7-Day Reset Track**
+- 🌙 **40-Day Deep Discipline Journey**
+- 🎴 **Affirmation Cards & Practice Sheets**
+- 🧱 **Simple tools for logging, tracking and upgrading speech**
+
+---
+
+## 🧱 Repo Structure
+
+See `/docs` for detailed guides:
+
+- `docs/overview.md` – concept & foundations  
+- `docs/tracks-7day.md` – 7-day plan  
+- `docs/tracks-40day.md` – 40-day journey  
+- `docs/faq.md` – common questions  
+- `docs/practics-cards.md` – card texts & formats  
+
+---
+
+## 🚀 Run as GitHub Pages
+
+1. Clone repo  
+2. Enable **GitHub Pages** on the `main` branch, root  
+3. `index.html` is the main landing page  
+
+---
+
+## 🏷 Hashtags
+
+`#SilenceAscend` `#FastOfSpeech` `#TaanitDibur` `#WordDiscipline` `#AnLoMinus`
+```
+
+---
+
+## 🎼 פזמון ראפ קצר לנושא תענית דיבור 🎤
+
+> **Silence on the mic, כל הלב מתמקד,**
+> **מילה אחת קדושה – זה נשק ממוקד,**
+> **פחות רעש חיצוני, יותר אש מבפנים,**
+> **אני צם מהדיבור – ומדבר רק בפנים.**
+
+---
+
+## 📖 פסוק חיזוק מתאים לנושא
+
+> **"שֹׁמֵר פִּיו וּלְשׁוֹנוֹ שֹׁמֵר מִצָּרוֹת נַפְשׁוֹ"**
+> *(משלי כ"א, כ"ג)*
+
+אם תרצה עכשיו – אני מוסיף:
+
+* 🧾 דף קלפים באנגלית למשפטי כוח לתענית דיבור
+* או 🎨 פוסטר 4K “SilenceAscend – SA” עם מסלול 7/40 יום בפנים.
