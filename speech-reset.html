@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>למה עושים תענית דיבור? – SpeechReset – SR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="למה עושים תענית דיבור? ארבע סיבות עומק: ריסון היצר של הפה, ריפוי כוח הדיבור, איפוס אנרגטי וחיזוק החיבור לבורא." />
+  <style>
+    :root {
+      --bg-main: #050816;
+      --bg-card: #0b1020;
+      --accent-1: #f97316;
+      --accent-2: #7f5af0;
+      --accent-3: #22c55e;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-soft: rgba(148, 163, 184, 0.4);
+      --radius-xl: 22px;
+      --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.75);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(127, 90, 240, 0.25), transparent 55%),
+        radial-gradient(circle at bottom, rgba(34, 197, 94, 0.2), transparent 55%),
+        #02010a;
+      color: var(--text-main);
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 32px 16px 40px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+    }
+
+    .logo-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .logo-main {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ffce6b;
+    }
+
+    .logo-sub {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .chip {
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 0.8rem;
+      border: 1px solid var(--border-soft);
+      background: rgba(15, 23, 42, 0.9);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chip-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+    }
+
+    .hero {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(12, 10, 40, 0.98));
+      border-radius: var(--radius-xl);
+      padding: 26px 22px 22px;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.05), transparent 55%),
+        radial-gradient(circle at 90% 100%, rgba(255, 255, 255, 0.04), transparent 55%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-kicker {
+      font-size: 0.82rem;
+      color: var(--accent-1);
+      margin-bottom: 6px;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3vw, 2.2rem);
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, #f97316, #facc15, #22c55e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 720px;
+    }
+
+    .hero-text strong {
+      color: #e5e7eb;
+    }
+
+    .hero-note {
+      margin-top: 10px;
+      font-size: 0.84rem;
+      color: var(--accent-3);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    @media (max-width: 820px) {
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      background: radial-gradient(circle at top right, rgba(127, 90, 240, 0.24), transparent 60%),
+                  radial-gradient(circle at bottom left, rgba(249, 115, 22, 0.22), transparent 60%),
+                  var(--bg-card);
+      border-radius: var(--radius-xl);
+      padding: 18px 16px 16px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.65);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-tag {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-title span.icon {
+      font-size: 1.3rem;
+    }
+
+    .card-body {
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .card-body span.highlight {
+      color: #ffce6b;
+      font-weight: 600;
+    }
+
+    .flow {
+      margin-top: 6px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .flow strong {
+      color: var(--accent-2);
+    }
+
+    .footer-note {
+      margin-top: 24px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-note span.tag {
+      opacity: 0.9;
+    }
+
+    .back-link {
+      font-size: 0.85rem;
+      color: #ffce6b;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="logo-block">
+      <div class="logo-main">SilenceAscend · SA</div>
+      <div class="logo-sub">SpeechReset · SR · למה עושים תענית דיבור?</div>
+    </div>
+    <div class="chip">
+      <span class="chip-dot"></span>
+      🔥 עומק המוטיבציה · תענית דיבור
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-kicker">🔥 למה בכלל לצום בדיבור?</div>
+      <h1 class="hero-title">
+        תענית דיבור: <span>פחות רעש</span>, יותר <span>עוצמה פנימית</span>.
+      </h1>
+      <p class="hero-text">
+        תענית דיבור אינה עונש, אלא <strong>שדרוג מערכת</strong>.  
+        היא לא נועדה "לסתום" את האדם, אלא לפתוח בו ערוצים עמוקים יותר של מודעות,
+        נשימה, נוכחות ושליטה עצמית. כאן מתרכזות ארבע סיבות ליבה – מה באמת
+        קורה בנפש כשאדם בוחר לשתוק מהדיבור המיותר, ולמה השקט הזה כל כך חזק.
+      </p>
+      <div class="hero-note">
+        🎯 שקט חיצוני → שקט פנימי → בחירה מודעת בכל מילה.
+      </div>
+    </div>
+  </section>
+
+  <section class="grid">
+    <!-- 1: ריסון היצר של הפה -->
+    <article class="card">
+      <div class="card-tag">1️⃣ יסוד המשמעת</div>
+      <h2 class="card-title">
+        <span class="icon">🧘‍♂️</span>
+        ריסון היצר של הפה
+      </h2>
+      <div class="card-body">
+        הפה הוא אחד השערים העוצמתיים ביותר בנפש האדם.  
+        בתענית דיבור, האדם <span class="highlight">עוצר את האוטומט</span>:
+        לא מגיב מיד, לא זורק מילה בלי לחשוב, לא נותן לרגש להוביל את הלשון.
+        במקום תגובה אוטומטית – נולדת בחירה.
+        <div class="flow">
+          <strong>שקט חיצוני → שקט פנימי → שליטה רגשית.</strong>  
+          בהדרגה, היצר של "אני חייב להגיב עכשיו" נחלש,
+          והאדם לומד שהוא חזק יותר מהדחף המילולי.
+        </div>
+      </div>
+    </article>
+
+    <!-- 2: ריפוי כוח הדיבור -->
+    <article class="card">
+      <div class="card-tag">2️⃣ שיקום הכלי</div>
+      <h2 class="card-title">
+        <span class="icon">🎤</span>
+        ריפוי כוח הדיבור
+      </h2>
+      <div class="card-body">
+        הדיבור נברא כדי להיות כלי של <span class="highlight">יצירה, ברכה והשפעה טובה</span>.  
+        כשהפה מתמלא בלשון הרע, ציניות, שיפוטיות ועצבים – הכלי נפגם.
+        תענית דיבור היא כמו תקופת התאוששות:
+        האדם נמנע מדיבור מזיק, ובכך נותן לכוח המילה להתרפא.
+        <div class="flow">
+          במקום פיזור מילים – <strong>כוונה</strong>.  
+          במקום רגש מתפרץ – <strong>מילה בונה</strong>.  
+          אחרי התענית, כל מילה מקבלת משקל ואחריות.
+        </div>
+      </div>
+    </article>
+
+    <!-- 3: איפוס אנרגטי -->
+    <article class="card">
+      <div class="card-tag">3️⃣ ניקוי תדר</div>
+      <h2 class="card-title">
+        <span class="icon">⚡</span>
+        איפוס אנרגטי
+      </h2>
+      <div class="card-body">
+        כל מילה היא תדר. דיבור בלתי פוסק יוצר רעש אנרגטי מתמשך.
+        כשאדם בוחר לשתוק, הוא בעצם לוחץ על <span class="highlight">כפתור האיפוס</span>
+        של מערכת הדיבור שלו. פחות מילים = פחות זיהום תדרי.
+        <div class="flow">
+          <strong>הורדת רעשים → פתיחת אינטואיציה → חידוד הקול הפנימי.</strong>  
+          בשקט, מתחילים לשמוע דברים שלא שמענו קודם:
+          תחושות עדינות, קול מצפון, רמזים רוחניים.
+        </div>
+      </div>
+    </article>
+
+    <!-- 4: חיזוק החיבור לבורא -->
+    <article class="card">
+      <div class="card-tag">4️⃣ עומק הקשר</div>
+      <h2 class="card-title">
+        <span class="icon">🌌</span>
+        חיזוק החיבור לבורא
+      </h2>
+      <div class="card-body">
+        כשיש פחות דיבור חיצוני, נפתח מקום ליותר <span class="highlight">נוכחות אלוקית</span>.
+        האדם פחות עסוק ב"לספר את עצמו" לעולם, ויותר פנוי לשמוע, לקלוט ולהרגיש
+        איך הבורא מדבר איתו דרך החיים.
+        <div class="flow">
+          <strong>פחות מילים = יותר מודעות ויותר קדושה.</strong>  
+          בתענית דיבור, הלב מתרכך, המחשבה מתעדנת,
+          והחיבור לתפילה, ללימוד ולשכינה – נעשה חד וחי.
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <div class="footer-note">
+    <span class="tag">
+      פסוק יסוד: "מִי הָאִישׁ הֶחָפֵץ חַיִּים... נְצֹר לְשׁוֹנְךָ מֵרָע" (תהילים ל"ד)
+    </span>
+    <span>
+      <a href="index.html" class="back-link">⬅ חזרה לעמוד הראשי של SilenceAscend – SA</a>
+    </span>
+  </div>
+
+</div>
+</body>
+</html>
